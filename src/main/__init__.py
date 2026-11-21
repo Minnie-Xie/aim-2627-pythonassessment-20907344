@@ -35,12 +35,11 @@ class Facing(Enum):
 # Q1 机器人自检（题面 Q1·自检状态计算与报告生成）
 # ---------------------------------------------------------------------------
 def hp_ratio(hp, max_hp):
-     if type(hp) is int and type(max_hp) is int:
+    if type(hp) is int and type(max_hp) is int:
         percent_hp = (hp / max_hp) * 100
         return int(percent_hp)
-     else:
+    else:
         raise TypeError("hp 和 max_hp 必须是 int 类型")
-    
 
 
 def status_report(name, robot_type, hp, max_hp, battery):
@@ -58,7 +57,7 @@ def status_report(name, robot_type, hp, max_hp, battery):
         raise ValueError("battery_count 不能大于 100")
     return f"{name:<10}|{robot_type:^10}|HP {percent_hp:>3}%|BAT {battery_count:>3}%|{status_robot}"
     """TODO(Q1)：一行自检报告字符串；档位判定与逐字符格式见题面 Q1 规范。"""
-    
+
 
 # ---------------------------------------------------------------------------
 # Q2 战斗日志分析（题面 Q2·多源日志解析与统计）
